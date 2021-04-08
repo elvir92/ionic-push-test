@@ -1148,6 +1148,13 @@
   resolved "https://registry.yarnpkg.com/@discoveryjs/json-ext/-/json-ext-0.5.2.tgz#8f03a22a04de437254e8ce8cc84ba39689288752"
   integrity sha512-HyYEUDeIj5rRQU2Hk5HTB2uHsbRQpF70nvMhVzi+VJR0X+xNEhjPui4/kBf3VeH/wqD28PT4sVOm8qqLjBrSZg==
 
+"@ionic-native/core@^5.32.0":
+  version "5.32.0"
+  resolved "https://registry.yarnpkg.com/@ionic-native/core/-/core-5.32.0.tgz#7cca1157ef7ac2de480d58ae6baa32cd2122adb8"
+  integrity sha512-4/+HaZniaMyr/fSobTAflKkrgDFvrzK+eZKk3hxalyvg00FQFmT8lu0gt5fQwiHfjn970FOaIh5USJqTwpplbQ==
+  dependencies:
+    "@types/cordova" latest
+
 "@ionic-native/unique-device-id@^5.32.0":
   version "5.32.0"
   resolved "https://registry.yarnpkg.com/@ionic-native/unique-device-id/-/unique-device-id-5.32.0.tgz#635797614dd9ecbdc837360bd2633e29a91a7067"
