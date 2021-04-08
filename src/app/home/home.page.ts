@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-
+import {UniqueDeviceID} from '@ionic-native/unique-device-id/ngx';
 
 import {
   Plugins,
@@ -18,12 +18,17 @@ const {PushNotifications, Device} = Plugins;
 export class HomePage implements OnInit {
 
   deviceInfo: any;
+  deviceInfo2: any;
 
-  constructor() {
+  constructor(private uniqueDeviceID: UniqueDeviceID) {
   }
 
   ngOnInit() {
     console.log('Initializing HomePage');
+
+    this.uniqueDeviceID.get()
+      .then((uuid: any) => this.deviceInfo2 = uuid)
+      .catch((error: any) => console.log(error));
 
     // // Request permission to use push notifications
     // // iOS will prompt user and return if they granted permission or not
