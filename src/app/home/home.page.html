@@ -14,7 +14,11 @@
   </ion-header>
 
   <div id="container">
-    <h1>TOKEN: {{token}} </h1>
-    <h3>DEVICE INFO : {{deviceInfo | json}} </h3>
+    <h1>TOKEN</h1>
+    <br/>
+    <span>{{token | async}}</span>
+    <h3>DEVICE INFO </h3><br/>
+    <span>{{deviceInfo | json}}</span>
+
   </div>
 </ion-content>

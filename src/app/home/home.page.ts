@@ -6,8 +6,12 @@ import {
   PushNotificationToken,
   PushNotificationActionPerformed,
 } from '@capacitor/core';
+import {FCM} from '@capacitor-community/fcm';
 
-const {PushNotifications, Device} = Plugins;
+const {PushNotifications, Device, Modals} = Plugins;
+const fcm = new FCM();
+
+const {FCMPlugin} = Plugins;
 
 @Component({
   selector: 'app-home',
@@ -24,8 +28,55 @@ export class HomePage implements OnInit {
 
   ngOnInit() {
     console.log('Initializing HomePage');
-    this.setupNotifications();
+    // this.setupNotifications();
+    this.registerPush()
     this.getImei();
+  }
+
+  private registerPush() {
+
+    PushNotifications.requestPermission().then((permission) => {
+      if (permission.granted) {
+        // Register with Apple / Google to receive push via APNS/FCM
+        PushNotifications.register();
+      } else {
+        alert('No permission for push granted');
+      }
+    });
+
+    PushNotifications.addListener(
+      'registration',
+      (token: PushNotificationToken) => {
+        alert('APN token: ' + JSON.stringify(token));
+        fcm.getToken().then((r) => {
+          alert(`FCM Token: ${r.token}`); //---- showing null.
+        }).catch((err) => {
+          alert(`FCM Token ERROR: ${JSON.stringify(err)}`);
+        });
+
+      }
+    );
+
+    PushNotifications.addListener('registrationError', (error: any) => {
+      alert('Registration Error: ' + JSON.stringify(error));
+    });
+
+    PushNotifications.addListener(
+      'pushNotificationReceived',
+      async (notification: PushNotification) => {
+        Modals.alert({
+          title: notification.title,
+          message: notification.body
+        });
+      }
+    );
+
+    PushNotifications.addListener(
+      'pushNotificationActionPerformed',
+      async (notification: PushNotificationActionPerformed) => {
+        alert('Action performed: ' + JSON.stringify(notification.notification));
+      }
+    );
   }
 
   private setupNotifications() {
