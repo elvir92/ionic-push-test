@@ -1,0 +1,7 @@
+{
+  "name": "capPushApp",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
