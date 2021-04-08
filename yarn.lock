@@ -1150,6 +1150,11 @@
   resolved "https://registry.yarnpkg.com/@capacitor/ios/-/ios-2.4.7.tgz#03eecc5348d2ac84e62fc17ae37cc266bcc6a437"
   integrity sha512-XKYU67ZM+yY4/vDJ3ZVfs+phjtWK8TcKwq75fGoxB9PKXuCmMi5bihPuA3Xs/sIFXuozpnaYnspp0eTRJ7bG0w==
 
+"@capacitor/push-notifications@^0.3.6":
+  version "0.3.6"
+  resolved "https://registry.yarnpkg.com/@capacitor/push-notifications/-/push-notifications-0.3.6.tgz#75246a2c3dcb85ec004f4db23585c1eabce2d5d0"
+  integrity sha512-IpYmwn7EjUok7n4CweQQgypEGrcojpuP9Q9RUO0aTFT0Jr90h6tEDj4G+zUCTeXoR0KRcxTrk3fAlyf5t4D+CQ==
+
 "@discoveryjs/json-ext@0.5.2":
   version "0.5.2"
   resolved "https://registry.yarnpkg.com/@discoveryjs/json-ext/-/json-ext-0.5.2.tgz#8f03a22a04de437254e8ce8cc84ba39689288752"

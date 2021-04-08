@@ -23,6 +23,7 @@
     "@capacitor/android": "2.4.7",
     "@capacitor/core": "2.4.7",
     "@capacitor/ios": "2.4.7",
+    "@capacitor/push-notifications": "^0.3.6",
     "@ionic-native/core": "^5.32.0",
     "@ionic/angular": "^5.5.2",
     "rxjs": "~6.6.0",
