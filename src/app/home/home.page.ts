@@ -29,7 +29,7 @@ export class HomePage implements OnInit {
   ngOnInit() {
     console.log('Initializing HomePage');
     // this.setupNotifications();
-    this.registerPush()
+    this.registerPush();
     this.getImei();
   }
 
